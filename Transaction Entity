@@ -1,0 +1,15 @@
+@Entity
+public class Transaction {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String type; // Deposit or Withdrawal
+    private BigDecimal amount;
+    private Timestamp date;
+
+    @ManyToOne
+    private Account account;
+
+    // Getters and Setters
+}
